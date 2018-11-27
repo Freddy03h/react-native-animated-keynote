@@ -1,0 +1,12 @@
+Animated.timing(this.animatedValue, {
+  toValue: 1,
+  duration: 500,
+  useNativeDriver: true, // <-- Add this
+}).start();
+
+
+
+
+
+
+  

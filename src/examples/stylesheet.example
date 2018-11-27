@@ -1,0 +1,34 @@
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
+ 
+class Example extends React.Component {
+  render() {
+    return (
+      <View style={[styles.box, {
+        backgroundColor: this.props.color,
+      }]} />
+    );
+  }
+}
+ 
+const styles = StyleSheet.create({
+  box: {
+    width: 300,
+    height: 300,
+    transform: [{
+      translate: 24,
+    },{
+      rotate: '45deg',
+    }],
+  },
+}); 
+ 
+
+
+
+
+
+
+
+
+
