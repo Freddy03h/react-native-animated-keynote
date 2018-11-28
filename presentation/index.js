@@ -307,9 +307,10 @@ export default class Presentation extends React.Component {
           lang="js"
           code={require("raw-loader!../src/examples/animsix.example")}
           ranges={[
-            { loc: [0, 183], title: "scroll event" },
+            { loc: [0, 184], title: "scroll event" },
             { loc: [10, 13] },
-            { loc: [89, 104] },
+            { loc: [16, 17] },
+            { loc: [89, 105] },
             { loc: [19, 26] },
             { loc: [27, 34] },
             { loc: [35, 41] },
@@ -322,22 +323,78 @@ export default class Presentation extends React.Component {
           showLineNumbers={false}
         />
 
+        <Slide bgColor="secondary">
+          <Heading caps size={1} textColor="tertiary">
+            Other things
+          </Heading>
+        </Slide>
+
         <Slide>
+          <Heading size={3} textColor="secondary">
+            LayoutAnimation
+          </Heading>
+          <video src={require("file-loader!../assets/layoutanimation.MP4")} style={screenImageStyleIosBig} muted autoPlay loop playsInline></video>
+        </Slide>
+
+        <Slide>
+          <Heading size={3} textColor="secondary">
+            InteractionManager
+          </Heading>
+          <Text textColor="tertiary" margin="3.5rem auto 0"><Code textColor="tertiary">InteractionManager.runAfterInteractions()</Code></Text>
+        </Slide>
+
+        <Slide>
+          <Heading size={3} textColor="secondary">
+            Animated.diffClamp()
+          </Heading>
+          <video src={require("file-loader!../assets/diffclamp.MP4")} style={screenImageStyleIosHeader} muted autoPlay loop playsInline></video>
+        </Slide>
+
+        <Slide>
+          <Heading size={3} textColor="secondary">
+            PanResponder
+          </Heading>
+          <Text textColor="tertiary" textAlign="left" margin="3.5rem auto 0">
+            <Quote>It reconciles several touches into a single gesture. It makes single-touch gestures resilient to extra touches, and can be used to recognize simple multi-touch gestures.</Quote>
+          </Text>
+        </Slide>
+
+        <Slide>
+          <Heading size={3} textColor="secondary">
+            react-native-gesture-handler
+          </Heading>
+          <img style={{marginTop: '3.5rem'}} src="https://kmagiera.github.io/react-native-gesture-handler/img/sampleswipeable.gif" />
+        </Slide>
+
+        <Slide>
+          <Heading size={3} textColor="secondary">
+            react-native-reanimated
+          </Heading>
+          <Text textColor="tertiary" textAlign="left" margin="3.5rem auto 0">
+            <Quote>React Native's Animated library reimplemented.</Quote>
+          </Text>
+          <Text textColor="tertiary" textAlign="left" margin="3.5rem auto 0">
+            <Quote>It provides a more comprehensive, low level abstraction for the Animated library API to be built on top of and hence allow for much greater flexibility especially when it comes to gesture based interactions.</Quote>
+          </Text>
+        </Slide>
+
+        {/*<Slide>
           <Heading size={3} caps textColor="secondary">
             Other things
           </Heading>
           <List textColor="tertiary" margin="1em 0px 1em 20%">
             <ListItem><Code textColor="tertiary">PanResponder</Code></ListItem>
             <ListItem><Code textColor="tertiary">LayoutAnimation</Code></ListItem>
+            <ListItem><Code textColor="tertiary">InteractionManager</Code></ListItem>
             <ListItem><Code textColor="tertiary">Animated.diffClamp()</Code></ListItem>
             <ListItem><Code textColor="tertiary">react-native-gesture-handler</Code></ListItem>
             <ListItem><Code textColor="tertiary">react-native-reanimated</Code></ListItem>
           </List>
-        </Slide>
+        </Slide>*/}
 
         <Slide>
           <Heading size={4} caps textColor="secondary" margin="-4rem auto 0.5rem">
-            References
+            References 1/2
           </Heading>
 
           <Text textAlign="left">Documentation</Text>
@@ -353,6 +410,28 @@ export default class Presentation extends React.Component {
             <ListItem><Link href="https://blog.pusher.com/animation-react-native-part-1/" target="_blank">Adding animations to your React Native app</Link></ListItem>
             <ListItem><Link href="https://codeburst.io/butter-smooth-animations-in-react-native-93a3b86adf1" target="_blank">Butter Smooth Animations in React Native</Link></ListItem>
             <ListItem><Link href="https://medium.com/react-native-training/react-native-animations-using-the-animated-api-ebe8e0669fae" target="_blank">React Native Animations Using the Animated API</Link></ListItem>
+          </List>
+
+        </Slide>
+
+        <Slide>
+          <Heading size={4} caps textColor="secondary" margin="-4rem auto 0.5rem">
+            References 2/2
+          </Heading>
+
+          <Text textAlign="left">Talks</Text>
+          <List textColor="tertiary" margin="0px 0px 1em">
+            <ListItem><Link href="https://www.youtube.com/watch?v=xtqUJVqpKNo" target="_blank">Christopher Chedeau - Animated</Link></ListItem>
+            <ListItem><Link href="https://www.youtube.com/watch?v=qgSMjYWqBk4" target="_blank">Krzysztof Magiera - React Native ❤ 60FPS</Link></ListItem>
+            <ListItem><Link href="https://www.youtube.com/watch?v=kdq4z2708VM" target="_blank">Krzysztof Magiera - Declarative future of gestures and animations in React Native</Link></ListItem>
+            <ListItem><Link href="https://www.youtube.com/watch?v=Z0Jl1KCWiag" target="_blank">Krzysztof Magiera - It all starts with navigation</Link></ListItem>
+            <ListItem><Link href="https://www.youtube.com/watch?v=ZXqyaslyXUw" target="_blank">James Long - Block the Main Thread </Link></ListItem>
+          </List>
+
+          <Text textAlign="left">Tools</Text>
+          <List textColor="tertiary" margin="0px 0px 1em">
+            <ListItem><Link href="https://github.com/kmagiera/react-native-gesture-handler" target="_blank">React Native Gesture Handler</Link></ListItem>
+            <ListItem><Link href="https://github.com/kmagiera/react-native-reanimated" target="_blank">React Native Reanimated</Link></ListItem>
           </List>
 
         </Slide>

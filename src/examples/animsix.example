@@ -91,6 +91,7 @@ class AnimFive extends React.Component {
             style={styles.scrollView}
             contentContainerStyle={styles.scrollViewContent}
             onScroll={Animated.event(
+              // scrollY = e.nativeEvent.contentOffset.y
               [{
                 nativeEvent: {
                   contentOffset: {
