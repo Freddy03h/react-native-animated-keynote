@@ -17,7 +17,8 @@
     "react-dom": "15.4.2",
     "react-native-web": "0.0.130",
     "spectacle": "^2.0.0",
-    "spectacle-code-slide": "^0.5.2"
+    "spectacle-code-slide": "^0.5.2",
+    "victory": "false31.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",

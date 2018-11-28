@@ -17,6 +17,7 @@ import {
   S,
 } from "spectacle";
 import CodeSlide from 'spectacle-code-slide';
+import { VictoryLine, VictoryChart, VictoryScatter, VictoryTheme } from 'victory';
 
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
@@ -286,6 +287,179 @@ export default class Presentation extends React.Component {
           ]}
           showLineNumbers={false}
         />
+
+        <Slide className="slide-no-padding" bgColor="tertiary">
+          <div style={{margin: '0 auto', display: 'flex'}}>
+            <div style={{width: 600, flexGrow: 1, flexShrink: 0, flexBasis: 600 }}>
+              <VictoryChart
+                theme={VictoryTheme.material}
+                padding={{ top: 10, left: 40, bottom: 10, right: 10 }}
+              >
+                <VictoryLine
+                  style={{
+                    data: { stroke: "#ff4081" },
+                    parent: { border: "1px solid #ccc"}
+                  }}
+                  data={[
+                    { x: 0, y: -100 },
+                    { x: 100, y: 200 },
+                  ]}
+                />
+                <VictoryLine
+                  style={{
+                    data: { stroke: "#ff4081", strokeDasharray: [4, 2] },
+                    parent: { border: "1px solid #ccc"}
+                  }}
+                  data={[
+                    { x: 100, y: 200 },
+                    { x: 120, y: 260 },
+                  ]}
+                />
+                <VictoryLine
+                  style={{
+                    data: { stroke: "#ff4081", strokeDasharray: [4, 2] },
+                    parent: { border: "1px solid #ccc"}
+                  }}
+                  data={[
+                    { x: -20, y: -160 },
+                    { x: 0, y: -100 },
+                  ]}
+                />
+                <VictoryScatter
+                  data={[
+                    { x: 0, y: -100 },
+                    { x: 100, y: 200 },
+                  ]}
+                  size={5}
+                  style={{ data: { fill: "#ff4081" } }}
+                  labels={(datum) => `${datum.x}, ${datum.y}`}
+                />
+              </VictoryChart>
+            </div>
+            <div>
+              <Code margin="0 auto 0.5rem" style={{display: 'inline-block'}}>inputRange: [0, 100]</Code>
+              <Code margin="0 auto 0.5rem" style={{display: 'inline-block'}}>outputRange: [-100, 200]</Code>
+              <Code margin="0 auto 0.5rem" style={{display: 'inline-block'}}>extrapolate: 'extend'</Code>
+            </div>
+          </div>
+        </Slide>
+
+        <Slide className="slide-no-padding" bgColor="tertiary">
+          <div style={{margin: '0 auto', display: 'flex'}}>
+            <div style={{width: 600, flexGrow: 1, flexShrink: 0, flexBasis: 600 }}>
+              <VictoryChart
+                theme={VictoryTheme.material}
+                padding={{ top: 10, left: 40, bottom: 10, right: 10 }}
+                domainPadding={{x: 0, y: 30}}
+              >
+                <VictoryLine
+                  style={{
+                    data: { stroke: "#ff4081" },
+                    parent: { border: "1px solid #ccc"}
+                  }}
+                  data={[
+                    { x: 0, y: -100 },
+                    { x: 100, y: 200 },
+                  ]}
+                />
+                <VictoryLine
+                  style={{
+                    data: { stroke: "#ff4081", strokeDasharray: [4, 2] },
+                    parent: { border: "1px solid #ccc"}
+                  }}
+                  data={[
+                    { x: 100, y: 200 },
+                    { x: 120, y: 200 },
+                  ]}
+                />
+                <VictoryLine
+                  style={{
+                    data: { stroke: "#ff4081", strokeDasharray: [4, 2] },
+                    parent: { border: "1px solid #ccc"}
+                  }}
+                  data={[
+                    { x: -20, y: -100 },
+                    { x: 0, y: -100 },
+                  ]}
+                />
+                <VictoryScatter
+                  data={[
+                    { x: 0, y: -100 },
+                    { x: 100, y: 200 },
+                  ]}
+                  size={5}
+                  style={{ data: { fill: "#ff4081" } }}
+                  labels={(datum) => `${datum.x}, ${datum.y}`}
+                />
+              </VictoryChart>
+            </div>
+            <div>
+              <Code margin="0 auto 0.5rem" style={{display: 'inline-block'}}>inputRange: [0, 100]</Code>
+              <Code margin="0 auto 0.5rem" style={{display: 'inline-block'}}>outputRange: [-100, 200]</Code>
+              <Code margin="0 auto 0.5rem" style={{display: 'inline-block'}}>extrapolate: 'clamp'</Code>
+            </div>
+          </div>
+        </Slide>
+
+        <Slide className="slide-no-padding" bgColor="tertiary">
+          <div style={{margin: '0 auto', display: 'flex'}}>
+            <div style={{width: 600, flexGrow: 1, flexShrink: 0, flexBasis: 600 }}>
+              <VictoryChart
+                theme={VictoryTheme.material}
+                padding={{ top: 10, left: 40, bottom: 10, right: 10 }}
+                domainPadding={{x: 0, y: 30}}
+              >
+                <VictoryLine
+                  style={{
+                    data: { stroke: "#ff4081" },
+                    parent: { border: "1px solid #ccc"}
+                  }}
+                  data={[
+                    { x: -80, y: 40 },
+                    { x: 0, y: 0 },
+                    { x: 100, y: -20 },
+                  ]}
+                />
+                <VictoryLine
+                  style={{
+                    data: { stroke: "#ff4081", strokeDasharray: [4, 2] },
+                    parent: { border: "1px solid #ccc"}
+                  }}
+                  data={[
+                    { x: 100, y: -20 },
+                    { x: 130, y: -20 },
+                  ]}
+                />
+                <VictoryLine
+                  style={{
+                    data: { stroke: "#ff4081", strokeDasharray: [4, 2] },
+                    parent: { border: "1px solid #ccc"}
+                  }}
+                  data={[
+                    { x: -110, y: 55 },
+                    { x: -80, y: 40 },
+                  ]}
+                />
+                <VictoryScatter
+                  data={[
+                    { x: -80, y: 40 },
+                    { x: 0, y: 0 },
+                    { x: 100, y: -20 },
+                  ]}
+                  size={5}
+                  style={{ data: { fill: "#ff4081" } }}
+                  labels={(datum) => `${datum.x}, ${datum.y}`}
+                />
+              </VictoryChart>
+            </div>
+            <div>
+              <Code margin="0 auto 0.5rem" style={{display: 'inline-block', maxWidth: 400}}>inputRange: [-80, 0, 100]</Code>
+              <Code margin="0 auto 0.5rem" style={{display: 'inline-block', maxWidth: 400}}>outputRange: [40, 0, -20]</Code>
+              <Code margin="0 auto 0.5rem" style={{display: 'inline-block'}}>extrapolateLeft: 'extend'</Code>
+              <Code margin="0 auto 0.5rem" style={{display: 'inline-block'}}>extrapolateRight: 'clamp'</Code>
+            </div>
+          </div>
+        </Slide>
 
         <Slide bgColor="secondary">
           <Heading caps size={1} textColor="tertiary">
