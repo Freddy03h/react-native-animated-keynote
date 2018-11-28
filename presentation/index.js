@@ -127,7 +127,7 @@ export default class Presentation extends React.Component {
 
         <Slide bgColor="secondary">
           <Heading caps size={1} textColor="tertiary">
-            "One-shot" Animation
+            Non-Interactive Animation
           </Heading>
         </Slide>
 
