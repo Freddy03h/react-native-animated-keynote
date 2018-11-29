@@ -142,7 +142,7 @@ export default class Presentation extends React.Component {
           ranges={[
             { loc: [0, 50], title: "Animated.timing()" },
             { loc: [4, 6], note: "import Animated" },
-            { loc: [9, 10], note: "create Animated.Vale" },
+            { loc: [9, 10], note: "create Animated.Value" },
             { loc: [23, 27], note: "use Animated.View" },
             { loc: [27, 31] },
             { loc: [11, 20] },
