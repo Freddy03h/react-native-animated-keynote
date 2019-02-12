@@ -472,6 +472,26 @@ export default class Presentation extends React.Component {
           <a style={{position:'absolute', top: 400, right: 0, transform: 'scale(0.7)'}} href="https://snack.expo.io/@freddy03h/animated-header-scroll"><Text textColor="tertiary">Link to<br/>Snack</Text></a>
         </Slide>
 
+        <Slide className="slide-no-padding" bgColor="tertiary">
+          <div style={{height: 720, width: 480, margin: 'auto', border: 'solid black 10px', padding: 5, display: 'flex', flexDirection: 'column', position: 'relative'}}>
+            <div style={{height: 280, border: 'solid #e91e63 10px', position: 'absolute', top: 30, left: 30, right: 30}}>
+              <span style={{position: 'absolute', left: 10, bottom: 0, color: '#e91e63', fontWeight: 'bold'}}>Image</span>
+            </div>
+            <div style={{height: 120, border: 'solid #4caf50 10px', margin: 5, position: 'relative'}}>
+              <span style={{position: 'absolute', left: 30, bottom: 0, color: '#4caf50', fontWeight: 'bold'}}>Header</span>
+            </div>
+            <div style={{border: 'solid #2196f3 10px', margin: 5, flexGrow: 1, position: 'relative'}}>
+              <span style={{position: 'absolute', left: 10, bottom: 0, color: '#2196f3', fontWeight: 'bold'}}>ScrollView</span>
+            </div>
+            <div style={{borderLeft: 'solid #607d8b 10px', position: 'absolute', height: 120, left:490, top: 10, display: 'flex', alignItems: 'center'}}>
+              <span style={{color: '#607d8b', marginLeft: 10, fontWeight: 'bold'}}>HEIGHT_HEADER</span>
+            </div>
+            <div style={{borderLeft: 'solid #607d8b 10px', position: 'absolute', height: 170, left:490, top: 140, display: 'flex', alignItems: 'center'}}>
+              <span style={{color: '#607d8b', marginLeft: 10, fontWeight: 'bold'}}>HEIGHT_HERO</span>
+            </div>
+          </div>
+        </Slide>
+
         <Slide className="slide-no-padding" bgColor="secondary">
           <AnimSix />
         </Slide>
