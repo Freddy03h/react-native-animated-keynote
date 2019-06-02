@@ -7,7 +7,10 @@ const HEIGHT_TOTAL = HEIGHT_HEADER + HEIGHT_HERO;
  
 export default class AnimFive extends React.PureComponent {
   
-  scrollYValue = new Animated.Value(0);
+  constructor(props) {
+    super(props);
+    this.scrollYValue = props.scrollYValue ? props.scrollYValue : new Animated.Value(0);
+  }
     
   render() {
     const scaleBackgroundInterpolate =

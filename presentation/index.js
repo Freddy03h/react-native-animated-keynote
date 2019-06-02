@@ -28,6 +28,9 @@ import AnimThree from '../src/components/AnimThree'
 import AnimFour from '../src/components/AnimFour'
 import AnimFive from '../src/components/AnimFive'
 import AnimSix from '../src/components/AnimSix'
+import Interactive1 from '../src/components/Interactive1'
+
+import InterpolateChart from '../src/components/InterpolateChart'
 
 // Import theme
 import createTheme from "./theme";
@@ -346,50 +349,12 @@ export default class Presentation extends React.Component {
         <Slide className="slide-no-padding" bgColor="tertiary">
           <div style={{margin: '0 auto', display: 'flex'}}>
             <div style={{width: 600, flexGrow: 1, flexShrink: 0, flexBasis: 600 }}>
-              <VictoryChart
-                theme={VictoryTheme.material}
-                padding={{ top: 10, left: 40, bottom: 10, right: 10 }}
-              >
-                <VictoryLine
-                  style={{
-                    data: { stroke: "#ff4081" },
-                    parent: { border: "1px solid #ccc"}
-                  }}
-                  data={[
-                    { x: 0, y: -100 },
-                    { x: 100, y: 200 },
-                  ]}
-                />
-                <VictoryLine
-                  style={{
-                    data: { stroke: "#ff4081", strokeDasharray: [4, 2] },
-                    parent: { border: "1px solid #ccc"}
-                  }}
-                  data={[
-                    { x: 100, y: 200 },
-                    { x: 120, y: 260 },
-                  ]}
-                />
-                <VictoryLine
-                  style={{
-                    data: { stroke: "#ff4081", strokeDasharray: [4, 2] },
-                    parent: { border: "1px solid #ccc"}
-                  }}
-                  data={[
-                    { x: -20, y: -160 },
-                    { x: 0, y: -100 },
-                  ]}
-                />
-                <VictoryScatter
-                  data={[
-                    { x: 0, y: -100 },
-                    { x: 100, y: 200 },
-                  ]}
-                  size={5}
-                  style={{ data: { fill: "#ff4081" } }}
-                  labels={(datum) => `${datum.x}, ${datum.y}`}
-                />
-              </VictoryChart>
+              <InterpolateChart
+                inputRange={[0, 100]}
+                outputRange={[-100, 200]}
+                extrapolateLeft="extend"
+                extrapolateRight="extend"
+              />
             </div>
             <div>
               <Code margin="0 auto 0.5rem" style={{display: 'inline-block'}}>inputRange: [0, 100]</Code>
@@ -402,51 +367,13 @@ export default class Presentation extends React.Component {
         <Slide className="slide-no-padding" bgColor="tertiary">
           <div style={{margin: '0 auto', display: 'flex'}}>
             <div style={{width: 600, flexGrow: 1, flexShrink: 0, flexBasis: 600 }}>
-              <VictoryChart
-                theme={VictoryTheme.material}
-                padding={{ top: 10, left: 40, bottom: 10, right: 10 }}
+              <InterpolateChart
+                inputRange={[0, 100]}
+                outputRange={[-100, 200]}
+                extrapolateLeft="clamp"
+                extrapolateRight="clamp"
                 domainPadding={{x: 0, y: 30}}
-              >
-                <VictoryLine
-                  style={{
-                    data: { stroke: "#ff4081" },
-                    parent: { border: "1px solid #ccc"}
-                  }}
-                  data={[
-                    { x: 0, y: -100 },
-                    { x: 100, y: 200 },
-                  ]}
-                />
-                <VictoryLine
-                  style={{
-                    data: { stroke: "#ff4081", strokeDasharray: [4, 2] },
-                    parent: { border: "1px solid #ccc"}
-                  }}
-                  data={[
-                    { x: 100, y: 200 },
-                    { x: 120, y: 200 },
-                  ]}
-                />
-                <VictoryLine
-                  style={{
-                    data: { stroke: "#ff4081", strokeDasharray: [4, 2] },
-                    parent: { border: "1px solid #ccc"}
-                  }}
-                  data={[
-                    { x: -20, y: -100 },
-                    { x: 0, y: -100 },
-                  ]}
-                />
-                <VictoryScatter
-                  data={[
-                    { x: 0, y: -100 },
-                    { x: 100, y: 200 },
-                  ]}
-                  size={5}
-                  style={{ data: { fill: "#ff4081" } }}
-                  labels={(datum) => `${datum.x}, ${datum.y}`}
-                />
-              </VictoryChart>
+              />
             </div>
             <div>
               <Code margin="0 auto 0.5rem" style={{display: 'inline-block'}}>inputRange: [0, 100]</Code>
@@ -459,53 +386,14 @@ export default class Presentation extends React.Component {
         <Slide className="slide-no-padding" bgColor="tertiary">
           <div style={{margin: '0 auto', display: 'flex'}}>
             <div style={{width: 600, flexGrow: 1, flexShrink: 0, flexBasis: 600 }}>
-              <VictoryChart
-                theme={VictoryTheme.material}
-                padding={{ top: 10, left: 40, bottom: 10, right: 10 }}
+              <InterpolateChart
+                inputRange={[-80, 0, 100]}
+                outputRange={[40, 0, -20]}
+                extrapolateLeft="extend"
+                extrapolateRight="clamp"
+                marginStroke={30}
                 domainPadding={{x: 0, y: 30}}
-              >
-                <VictoryLine
-                  style={{
-                    data: { stroke: "#ff4081" },
-                    parent: { border: "1px solid #ccc"}
-                  }}
-                  data={[
-                    { x: -80, y: 40 },
-                    { x: 0, y: 0 },
-                    { x: 100, y: -20 },
-                  ]}
-                />
-                <VictoryLine
-                  style={{
-                    data: { stroke: "#ff4081", strokeDasharray: [4, 2] },
-                    parent: { border: "1px solid #ccc"}
-                  }}
-                  data={[
-                    { x: 100, y: -20 },
-                    { x: 130, y: -20 },
-                  ]}
-                />
-                <VictoryLine
-                  style={{
-                    data: { stroke: "#ff4081", strokeDasharray: [4, 2] },
-                    parent: { border: "1px solid #ccc"}
-                  }}
-                  data={[
-                    { x: -110, y: 55 },
-                    { x: -80, y: 40 },
-                  ]}
-                />
-                <VictoryScatter
-                  data={[
-                    { x: -80, y: 40 },
-                    { x: 0, y: 0 },
-                    { x: 100, y: -20 },
-                  ]}
-                  size={5}
-                  style={{ data: { fill: "#ff4081" } }}
-                  labels={(datum) => `${datum.x}, ${datum.y}`}
-                />
-              </VictoryChart>
+              />
             </div>
             <div>
               <Code margin="0 auto 0.5rem" style={{display: 'inline-block', maxWidth: 400}}>inputRange: [-80, 0, 100]</Code>
@@ -571,6 +459,11 @@ export default class Presentation extends React.Component {
           ]}
           showLineNumbers={false}
         />
+
+        <Slide className="slide-no-padding" bgColor="tertiary">
+          <Interactive1 />
+        </Slide>
+
 
         <Slide bgColor="secondary">
           <Heading caps size={1} textColor="tertiary">
