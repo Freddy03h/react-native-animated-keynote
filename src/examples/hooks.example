@@ -1,0 +1,21 @@
+function useAnimatedValue(value) {
+  return useRef(new Animated.Value(value)).current;
+}
+ 
+function HookExample {
+  const translateValue = useAnimatedValue(0);
+  
+  return (
+    <Animated.View style={[
+      styles.box,
+      { transform: [{ translateX: translateValue }] }
+    ]} />
+  );
+}
+
+
+
+
+
+
+  

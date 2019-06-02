@@ -1,14 +1,12 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
  
-class Example extends React.Component {
-  render() {
-    return (
-      <View style={[styles.box, {
-        backgroundColor: this.props.color,
-      }]} />
-    );
-  }
+function Example {
+  return (
+    <View style={[styles.box, {
+      backgroundColor: this.props.color,
+    }]} />
+  );
 }
  
 const styles = StyleSheet.create({
@@ -31,4 +29,4 @@ const styles = StyleSheet.create({
 
 
 
-
+ 

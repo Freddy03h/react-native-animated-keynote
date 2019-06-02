@@ -38,7 +38,7 @@ require("spectacle/lib/themes/default/index.css");
 
 
 const images = {
-  freddy: require("../assets/freddy.jpg"),
+  freddy: require("../assets/freddy.png"),
   twitter: require("../assets/twitter.png"),
 };
 
@@ -141,7 +141,7 @@ export default class Presentation extends React.Component {
           lang="js"
           code={require("raw-loader!../src/examples/stylesheet.example")}
           ranges={[
-            { loc: [0, 24] },
+            { loc: [0, 22] },
           ]}
           showLineNumbers={false}
         />
@@ -295,6 +295,28 @@ export default class Presentation extends React.Component {
           code={require("raw-loader!../src/examples/nativedriver.example")}
           ranges={[
             { loc: [0, 5] },
+          ]}
+          showLineNumbers={false}
+        />
+
+        <Slide>
+          <Heading size={3} caps textColor="tertiary">
+            Hooks
+          </Heading>
+          <Text textColor="tertiary" textAlign="left" margin="3.5rem auto 0">
+            <Quote><Code>useRef</Code> returns a mutable ref object whose <Code>.current</Code> property is initialized to the passed argument (<Code>initialValue</Code> ). The returned object will persist for the full lifetime of the component.</Quote>
+          </Text>
+          <Text textColor="tertiary" margin="3.5rem auto 0" style={{textAlign: "left", lineHeight: 1.1}}>
+            <Code>const translateValue = useRef(new Animated.Value(0)).current;</Code>
+          </Text>
+        </Slide>
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../src/examples/hooks.example")}
+          ranges={[
+            { loc: [0, 14] },
           ]}
           showLineNumbers={false}
         />
