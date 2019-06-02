@@ -93,6 +93,7 @@ export default class AnimFive extends React.PureComponent {
             scrollEventThrottle={16}
           >
             <View style={styles.textContent}>
+              {this.props.children}
               <Text style={styles.text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut massa odio. Aenean iaculis gravida dui. Quisque accumsan dignissim fringilla. Nullam ullamcorper erat maximus lacus mollis, id porttitor lacus congue. Sed in neque urna. Duis consectetur sollicitudin risus, et consequat urna feugiat at. Curabitur non ex erat. Donec rhoncus condimentum tempus. Sed ultricies felis vel enim sodales efficitur. Mauris venenatis congue odio, sed tempor magna convallis eu. Cras quis aliquet lectus, ac elementum ligula. Pellentesque vitae volutpat ipsum. Morbi non purus ligula. Vivamus pharetra enim a lorem porta, sed finibus sem tincidunt.</Text>
               <Text style={styles.text}>Aenean vitae porttitor nulla, tempus tempus sem. Etiam vel sem ultricies felis eleifend cursus. Aliquam feugiat nisi velit, quis cursus metus vestibulum ut. Cras tincidunt nisi leo, vel pellentesque ligula facilisis non. Duis finibus risus mi, id semper lorem fermentum vel. Aliquam vel nunc scelerisque, auctor lorem vitae, molestie nibh. Sed sit amet cursus justo, nec finibus eros. Aliquam interdum non dui id lobortis.</Text>
             </View>

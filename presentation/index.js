@@ -27,7 +27,8 @@ import AnimTwo from '../src/components/AnimTwo'
 import AnimThree from '../src/components/AnimThree'
 import AnimFour from '../src/components/AnimFour'
 import AnimFive from '../src/components/AnimFive'
-import AnimSix from '../src/components/AnimSix'
+import AnimSix from '../src/components/AnimSix' // Important
+import AnimSeven from '../src/components/AnimSeven'
 import Interactive1 from '../src/components/Interactive1'
 
 import InterpolateChart from '../src/components/InterpolateChart'
@@ -461,9 +462,93 @@ export default class Presentation extends React.Component {
         />
 
         <Slide className="slide-no-padding" bgColor="tertiary">
-          <Interactive1 />
+          <Interactive1
+            title="Scale Title"
+            inputRange={[0, 120]}
+            outputRange={[2, 1]}
+            extrapolateLeft="clamp"
+            extrapolateRight="clamp"
+            marginStroke={40}
+            padding={{ top: 34, left: 50, bottom: 24, right: 10 }}
+            initial={[0,2]}
+            round={100}
+            code={[
+              "inputRange: [0, 120]",
+              "outputRange: [2, 1]",
+              "extrapolate: 'clamp'",
+            ]}
+          />
         </Slide>
 
+        <Slide className="slide-no-padding" bgColor="tertiary">
+          <Interactive1
+            title="Translate Title"
+            inputRange={[-120, 0, 120]}
+            outputRange={[120, 120/2, 0]}
+            extrapolateLeft="extend"
+            extrapolateRight="clamp"
+            marginStroke={40}
+            padding={{ top: 34, left: 50, bottom: 24, right: 10 }}
+            initial={[0,60]}
+            round={1}
+            code={[
+              "inputRange: [-120, 0, 120]",
+              "outputRange: [120, 120 / 2, 0]",
+              "extrapolateLeft: 'extend'",
+              "extrapolateRight: 'clamp'",
+            ]}
+          />
+        </Slide>
+
+        <Slide className="slide-no-padding" bgColor="tertiary">
+          <Interactive1
+            title="Scale Background"
+            inputRange={[-200, 0]}
+            outputRange={[2, 1]}
+            extrapolateLeft="extend"
+            extrapolateRight="clamp"
+            marginStroke={40}
+            padding={{ top: 34, left: 50, bottom: 24, right: 10 }}
+            initial={[0,1]}
+            round={100}
+            code={[
+              "inputRange: [-200, 0]",
+              "outputRange: [2, 1]",
+              "extrapolateLeft: 'extend'",
+              "extrapolateRight: 'clamp'",
+            ]}
+          />
+        </Slide>
+
+        <Slide className="slide-no-padding" bgColor="tertiary">
+          <Interactive1
+            title="Scale Background"
+            inputRange={[-200, 0, 200]}
+            outputRange={[200 / 2, 0, -200 / 3]}
+            extrapolateLeft="extend"
+            extrapolateRight="clamp"
+            marginStroke={40}
+            padding={{ top: 34, left: 50, bottom: 24, right: 10 }}
+            initial={[0, 0]}
+            round={1}
+            code={[
+              "inputRange: [-200, 0, 200]",
+              "outputRange: [200 / 2, 0, -200 / 3]",
+              "extrapolateLeft: 'extend'",
+              "extrapolateRight: 'clamp'",
+            ]}
+          />
+        </Slide>
+
+        <Slide bgColor="tertiary">
+          <Heading size={3} textColor="secondary">
+            no transformOrigin
+          </Heading>
+          <AnimSeven />
+          <Heading size={1} textColor="secondary">
+            <Code>translateY = -(scale * height) / 2</Code>
+          </Heading>
+        </Slide>
 
         <Slide bgColor="secondary">
           <Heading caps size={1} textColor="tertiary">
