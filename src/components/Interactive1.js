@@ -58,7 +58,7 @@ export default class Interactive1 extends React.Component {
                 <Heading size={6} textColor="secondary">
                   {title}
                 </Heading>
-                {code.map((text) => <Code margin="0 auto 0.5rem" style={{display: 'inline-block', fontSize: 24}}>{text}</Code>)}
+                {code.map((text, index) => <Code key={index} margin="0 auto 0.5rem" style={{display: 'inline-block', fontSize: 24}}>{text}</Code>)}
               </div>
             </AnimSix>
           </div>
